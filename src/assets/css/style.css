@@ -67,3 +67,12 @@ button {
 button:focus {
   background-color: #ff0093;
 }
+
+#titleRightSide{
+  padding: 1em;
+  background-color: #c4c4c4;
+  color: black;
+  width: 70%;
+  display: inline-block;
+  margin-left: 25%;
+}
