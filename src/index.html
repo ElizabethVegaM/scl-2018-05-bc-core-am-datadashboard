@@ -3,36 +3,121 @@
   <head>
     <meta charset="utf-8">
     <title>Data Dashboard</title>
+    
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <!-- Tipografía -->
     <link href="https://fonts.googleapis.com/css?family=Bitter|Open+Sans" rel="stylesheet">
-    <!-- Estilos -->
-    <link rel="stylesheet" href="assets/css/grid.css"/>
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
-    <div class="container">
-      <aside class="col-3"> 
-        <div id="logo">
-          <img src="assets/img/Laboratoria-classic.png" alt="">
-        </div>
-        <div id="round">
-        </div>
-          <div id="info">
-            <h3>Nombre</h3>
-        </div>   
-      </aside>
-      <div id="top" class="row">
-        <header class="col-9">
+    <div class="container-fluid">
+      <!-- Primer Row -->
+      <div class="row">
+        <aside class="col-3">
+          <div class="logo ">
+            <img src="assets/img/Laboratoria-classic.png" alt="">
+          </div>
+          <div id="round">
+          </div>
+            <div id="info">
+              <h3>Nombre</h3>
+          </div>   
+          <!-- Barra de Navegación Lima-->
+          <nav class="navbar">
+            <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">LIMA - PE</button>
+            <!-- Menú desplegable -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+              <!-- Cohort -->
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Cohort 1 LI</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Cohort 2 LI</a>
+                </li>
+              </ul>
+              
+            </div>
+          </nav>
+          <!-- Barra de Navegación SCL -->
+          <nav class="navbar">
+            <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">SANTIAGO DE CHILE - CL</button>
+            <!-- Menú desplegable -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+              <!-- Cohort -->
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Cohort 1 SCL</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Cohort 2 SCL</a>
+                </li>
+              </ul>     
+            </div>
+          </nav>
+          <!-- Barra de Navegación GDL -->
+          <nav class="navbar">
+            <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent3" aria-controls="navbarSupportedContent3" aria-expanded="false" aria-label="Toggle navigation">GUADALAJARA - MX</button>
+            <!-- Menú desplegable -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent3">
+              <!-- Cohort -->
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Cohort 1 GDL</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Cohort 2 GDL</a>
+                </li>
+              </ul>     
+            </div>
+          </nav>
+          <!-- Barra de Navegación CDM -->
+          <nav class="navbar">
+            <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent4" aria-controls="navbarSupportedContent4" aria-expanded="false" aria-label="Toggle navigation">CIUDAD DE MÉXICO - MX</button>
+              <!-- Menú desplegable -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent4">
+              <!-- Cohort -->
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Cohort 1 CDM</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Cohort 2 CDM</a>
+                </li>
+              </ul>     
+            </div>
+          </nav>
+          <!-- Barra de Navegación SP -->
+          <nav class="navbar">
+            <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent5" aria-controls="navbarSupportedContent5" aria-expanded="false" aria-label="Toggle navigation">SAO PAULO - BR</button>
+            <!-- Menú desplegable -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent5">
+              <!-- Cohort -->
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Cohort 1 SP</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Cohort 2 SP</a>
+                </li>
+              </ul>     
+            </div>
+          </nav> 
+        </aside>
+        <header class="top col-9">
           <h1>Cohorts</h1>
         </header>
       </div>
-      <div class="row">
-            
 
-        
-      </div>
+
   
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <script src="assets/js/data.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
