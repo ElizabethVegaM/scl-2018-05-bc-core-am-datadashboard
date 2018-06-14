@@ -1,0 +1,52 @@
+.container {
+  text-align: initial;
+  align-items: center;
+}
+
+#top {
+  height: 40px;
+  background-color: #ffc107;
+  align-items: center;
+}
+
+img {
+  height: 70px;
+}
+
+aside {
+  height: 20vh;
+  background-color: #fafafa;
+  text-align: center;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+#logo {
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+#round {
+  margin: 0 auto;
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  background-color: #c4c4c4;
+}
+
+#info {
+  margin: 10px;
+}
+
+h1, h2 {
+  font-family: 'Bitter', serif;
+}
+
+.barra-izq{
+  text-align: center;
+  background-color:#c4c4c4 ;
+  width: 30%;
+  height: 60%;
+}
