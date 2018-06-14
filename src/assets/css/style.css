@@ -9,26 +9,37 @@
   align-items: center;
 }
 
-header {
-  float: right;
-}
-
 img {
   height: 70px;
 }
 
 aside {
-  float: left;
-  position: fixed;
-  height: 1000px;
+  height: 100vh;
   background-color: #fafafa;
+  text-align: center;
 }
 
 h1 {
-  font-size: 45px;
+  font-size: 50px;
 }
 
 #logo {
-  align-items: center;
-  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+#round {
+  margin: 0 auto;
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  background-color: #c4c4c4;
+}
+
+#info {
+  margin: 10px;
+}
+
+h1, h2 {
+  font-family: 'Bitter', serif;
 }

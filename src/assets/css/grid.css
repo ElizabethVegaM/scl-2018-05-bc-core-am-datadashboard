@@ -23,6 +23,7 @@
 [class*="col-"] {
   min-height: 7px;
   padding: 12px;
+  float: left;
 }
 
 .col-1 {
