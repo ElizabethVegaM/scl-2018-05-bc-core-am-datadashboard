@@ -1,33 +1,45 @@
-.container {
+.container-fluid {
   text-align: initial;
   align-items: center;
 }
 
-.top {
-  height: 80px;
-  background-color: #ffc107;
-  align-items: center;
+.no-gutters {
+  padding-right: 0;
+  padding-left: 0;
 }
 
-
-
-img {
-  height: 70px;
+.no-padding {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
+/* Estilos de Tipografías*/
+h1 {
+  font-size: 50px;
+}
+
+h1, h2, button {
+  font-family: 'Bitter', serif;
+}
+
+h4, .nav-link {
+  font-family: 'Open Sans';
+}
+
+/* Estilos de la barra lateral*/
 aside {
   height: 100vh;
   background-color: #fafafa;
   text-align: center;
 }
 
-h1 {
-  font-size: 50px;
-}
-
 #logo {
   margin: 0 auto;
   padding-bottom: 30px;
+}
+
+img {
+  width: 100%;
 }
 
 #round {
@@ -39,9 +51,32 @@ h1 {
 }
 
 #info {
-  margin: 10px;
+  margin: 10px 0px 20px 0px;
 }
 
-h1, h2 {
-  font-family: 'Bitter', serif;
+button {
+  width: 100%;
 }
+
+button:focus {
+  background-color: #ff0093;
+}
+
+.nav-link:focus {
+  background-color: #56f89a;
+}
+
+
+/* Header*/
+.top {
+  height: 80px;
+  background-color: #ffc107;
+  align-items: center;
+}
+
+
+
+
+
+
+
