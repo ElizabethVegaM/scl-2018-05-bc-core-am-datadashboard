@@ -43,7 +43,6 @@ aside {
 img {
   height: 70px;
   text-align: center;
-  
 }
 
 #round {
@@ -75,3 +74,6 @@ button:focus {
 .main {
   height: 90vh;
 }
+
+/* Información General del Cohort*/
+
