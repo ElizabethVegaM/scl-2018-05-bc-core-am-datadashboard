@@ -3,9 +3,10 @@
   align-items: center;
 }
 
-.no-gutters {
-  padding-right: 0;
-  padding-left: 0;
+#top {
+  height: 40px;
+  background-color: #ffc107;
+  align-items: center;
 }
 
 .no-padding {
@@ -28,7 +29,7 @@ h4, .nav-link {
 
 /* Estilos de la barra lateral*/
 aside {
-  height: 100vh;
+  height: 20vh;
   background-color: #fafafa;
   text-align: center;
 }
@@ -66,17 +67,9 @@ button:focus {
   background-color: #56f89a;
 }
 
-
-/* Header*/
-.top {
-  height: 80px;
-  background-color: #ffc107;
-  align-items: center;
+.barra-izq{
+  text-align: center;
+  background-color:#c4c4c4 ;
+  width: 30%;
+  height: 60%;
 }
-
-
-
-
-
-
-
