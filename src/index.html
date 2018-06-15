@@ -110,23 +110,49 @@
         </section>
       </aside>
       <!-- Sección principal -->
-      <section class="main col-9">
-        <div class="generalInfo">
+      <article class="main col-9">
+        <!-- Información general del curso -->
+        <section class="generalInfo">
           <h2>Estadísticas Generales del Cohort</h2>
-          <div id="readsCohort" class="col-2">
-            <h4>Lecturas</h4>
+          <div class="row">
+            <div id="readsCohort" class="col infoBox">
+              <h4>LECTURAS</h4>
+              <h2>%</h2>
+            </div>
+            <div id="quizzesCohort" class="col infoBox">
+              <h4>QUIZ</h4>
+              <h2>%</h2>
+            </div>
+            <div id="challengesCohort" class="col infoBox">
+              <h4>RETOS</h4>
+              <h2>%</h2>
+            </div>
+            <div id="progressCohort" class="col totalBox">
+              <h4>TOTAL</h4>
+              <h2>%</h2>
+            </div>
           </div>
-          <div id="quizzesCohort" class="col-2">
-            <h4>quizzesCohort</h4>
+        </section>
+        <!-- Información de Alumnas -->
+        <section class="studentsProfile row">
+          <h3>Listado de Alumnas</h3>
+          <div class="input-group">
+            <select class="custom-select" id="inputGroupSelect04">
+              <option selected>Seleccionar...</option>
+              <option value="" class="list">One</option>
+            </select>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button">VER</button>
+            </div>
           </div>
-          <div id="challengesCohort" class="col-2">
-            <h4>Retos</h4>
+        </section>
+        <section class="studentInfo row justify-content-center">
+          <div class="info col">
+            <h4>Nombre alumna</h4>
+            <h6>ID: </h6>
           </div>
-          <div id="progressCohort" class="col-2">
-            <h4>Retos</h4>
-          </div>
-        </div>
-      </section>
+        </section>
+      </article>
 
       <!--Accessibility
 Be sure to add aria-expanded to the control element. This attribute explicitly conveys the current state of the collapsible element tied to the control to screen readers and similar assistive technologies. If the collapsible element is closed by default, the attribute on the control element should have a value of aria-expanded="false". If you’ve set the collapsible element to be open by default using the show class, set aria-expanded="true" on the control instead. The plugin will automatically toggle this attribute on the control based on whether or not the collapsible element has been opened or closed (via JavaScript, or because the user triggered another control element also tied to the same collapsbile element). If the control element’s HTML element is not a button (e.g., an <a> or <div>), the attribute role="button" should be added to the element.

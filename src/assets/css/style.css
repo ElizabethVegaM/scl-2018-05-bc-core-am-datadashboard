@@ -1,6 +1,7 @@
 .container-fluid {
   text-align: initial;
   align-items: center;
+  font-family: 'Bitter', serif;
 }
 
 header {
@@ -19,12 +20,9 @@ h1 {
   font-size: 50px;
 }
 
-h1, h2, button {
-  font-family: 'Bitter', serif;
-}
-
-h4 {
+h4, .card-body, .list {
   font-family: 'Open Sans';
+  font-weight: bold;
 }
 
 /* Estilos de la barra lateral*/
@@ -50,7 +48,7 @@ img {
   height: 100px;
   width: 100px;
   border-radius: 50px;
-  background-color: #c4c4c4;
+  background-color: #ced4da;
 }
 
 #info {
@@ -59,11 +57,12 @@ img {
 
 .bar{
   text-align: center;
-  background-color:#c4c4c4 ;
+  background-color:#ff2323 ;
 }
 
 button {
   width: 100%;
+  font-weight: bold;
 }
 
 button:focus {
@@ -73,7 +72,43 @@ button:focus {
 /* Estilos de la sección principal */
 .main {
   height: 90vh;
+  text-align: center;
 }
 
 /* Información General del Cohort*/
 
+.infoBox, .totalBox {
+  margin-top: 2%;
+  border: 1px solid #ced4da;
+  text-align: center;
+  padding: 2%;
+}
+
+.totalBox {
+  margin-left: 2%;
+  background-color:  #56f89a;
+}
+
+.infoBox, .info {
+  margin-right: 5%;
+}
+
+/* Información de Alumnas */
+
+.generalInfo, .studentsProfile {
+  margin-top: 2%;
+  padding: 0% 5%;
+}
+
+.studentInfo {
+  margin-top: 2%;
+  
+}
+
+.info {
+  margin-left: 5%;
+  border: 1px solid #ced4da;
+  height: 40vh;
+  padding-top: 1%;
+  text-align: initial;
+}
