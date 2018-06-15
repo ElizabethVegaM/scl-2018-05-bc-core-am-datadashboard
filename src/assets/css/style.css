@@ -3,15 +3,15 @@
   align-items: center;
 }
 
-#top {
-  height: 40px;
+header {
+  height: 80px;
   background-color: #ffc107;
-  align-items: center;
+  padding-top: 5px;
 }
 
-.no-padding {
-  padding-top: 0;
-  padding-bottom: 0;
+.no-gutters {
+  padding-right: 0;
+  padding-left: 0;
 }
 
 /* Estilos de Tipografías*/
@@ -23,13 +23,13 @@ h1, h2, button {
   font-family: 'Bitter', serif;
 }
 
-h4, .nav-link {
+h4 {
   font-family: 'Open Sans';
 }
 
 /* Estilos de la barra lateral*/
 aside {
-  height: 20vh;
+  height: 100vh;
   background-color: #fafafa;
   text-align: center;
 }
@@ -55,21 +55,15 @@ img {
   margin: 10px 0px 20px 0px;
 }
 
+.bar{
+  text-align: center;
+  background-color:#c4c4c4 ;
+}
+
 button {
   width: 100%;
 }
 
 button:focus {
   background-color: #ff0093;
-}
-
-.nav-link:focus {
-  background-color: #56f89a;
-}
-
-.barra-izq{
-  text-align: center;
-  background-color:#c4c4c4 ;
-  width: 30%;
-  height: 60%;
 }
