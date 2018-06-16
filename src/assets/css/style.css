@@ -1,10 +1,11 @@
 .container-fluid {
   text-align: initial;
   align-items: center;
+  font-family: 'Bitter', serif;
 }
 
 header {
-  height: 80px;
+  height: 10vh;
   background-color: #ffc107;
   padding-top: 5px;
 }
@@ -19,28 +20,27 @@ h1 {
   font-size: 50px;
 }
 
-h1, h2, button {
-  font-family: 'Bitter', serif;
-}
-
-h4 {
+h4, .card-body, .list {
   font-family: 'Open Sans';
+  font-weight: bold;
 }
 
 /* Estilos de la barra lateral*/
 aside {
-  height: 100vh;
+  height: 90vh;
   background-color: #fafafa;
   text-align: center;
 }
 
 #logo {
+  height: 10vh;
   margin: 0 auto;
   padding-bottom: 30px;
 }
 
 img {
-  width: 100%;
+  height: 70px;
+  text-align: center;
 }
 
 #round {
@@ -48,7 +48,7 @@ img {
   height: 100px;
   width: 100px;
   border-radius: 50px;
-  background-color: #c4c4c4;
+  background-color: #ced4da;
 }
 
 #info {
@@ -57,17 +57,19 @@ img {
 
 .bar{
   text-align: center;
-  background-color:#c4c4c4 ;
+  background-color:#ff2323 ;
 }
 
 button {
   width: 100%;
+  font-weight: bold;
 }
 
 button:focus {
   background-color: #ff0093;
 }
 
+<<<<<<< HEAD
 #titleRightSide{
   padding: 1em;
   background-color: #c4c4c4;
@@ -75,4 +77,48 @@ button:focus {
   width: 70%;
   display: inline-block;
   margin-left: 25%;
+=======
+/* Estilos de la sección principal */
+.main {
+  height: 90vh;
+  text-align: center;
+}
+
+/* Información General del Cohort*/
+
+.infoBox, .totalBox {
+  margin-top: 2%;
+  border: 1px solid #ced4da;
+  text-align: center;
+  padding: 2%;
+}
+
+.totalBox {
+  margin-left: 2%;
+  background-color:  #56f89a;
+}
+
+.infoBox, .info {
+  margin-right: 5%;
+}
+
+/* Información de Alumnas */
+
+.generalInfo, .studentsProfile {
+  margin-top: 2%;
+  padding: 0% 5%;
+}
+
+.studentInfo {
+  margin-top: 2%;
+  
+}
+
+.info {
+  margin-left: 5%;
+  border: 1px solid #ced4da;
+  height: 40vh;
+  padding-top: 1%;
+  text-align: initial;
+>>>>>>> upstream/master
 }
