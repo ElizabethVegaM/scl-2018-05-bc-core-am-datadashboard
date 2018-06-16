@@ -69,15 +69,6 @@ button:focus {
   background-color: #ff0093;
 }
 
-<<<<<<< HEAD
-#titleRightSide{
-  padding: 1em;
-  background-color: #c4c4c4;
-  color: black;
-  width: 70%;
-  display: inline-block;
-  margin-left: 25%;
-=======
 /* Estilos de la sección principal */
 .main {
   height: 90vh;
@@ -120,5 +111,4 @@ button:focus {
   height: 40vh;
   padding-top: 1%;
   text-align: initial;
->>>>>>> upstream/master
 }
