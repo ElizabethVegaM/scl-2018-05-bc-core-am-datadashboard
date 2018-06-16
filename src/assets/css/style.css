@@ -94,8 +94,8 @@ button:focus {
 }
 
 /*barra de progreso*/
-#barraDEProgreso{
-  padding: 2%;
+.progress{
+  margin: 5% 3% 0% 2.8%;
 }
 /* Información de Alumnas */
 
