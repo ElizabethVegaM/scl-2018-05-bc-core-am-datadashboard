@@ -93,6 +93,10 @@ button:focus {
   margin-right: 5%;
 }
 
+/*barra de progreso*/
+#barraDEProgreso{
+  padding: 2%;
+}
 /* Información de Alumnas */
 
 .generalInfo, .studentsProfile {
