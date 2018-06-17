@@ -127,7 +127,7 @@
             <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <button class="cohortBtn">Cohort AM</button>
+                  <button id="show" class="cohortBtn">Cohort AM</button>
                 </li>
                 <li class="nav-item">
                   <button class="cohortBtn">Cohort PM</button>
@@ -139,7 +139,7 @@
       </aside>
 
       <!-- Sección principal -->
-      <article class="main col-9">
+      <article id="mainInfo" class="main col-9 d-none">
 
         <!-- Información general del curso -->
         <section class="generalInfo">
@@ -177,7 +177,7 @@
           <h3>Listado de Alumnas</h3>
         </section>
         <!-- Tabla de Ranking -->
-        <section class="studentList row">
+        <section id="ranking" class="studentList row">
           <table class="table col-lg-12">
             <thead>
               <tr>
@@ -193,31 +193,14 @@
             <tbody>
               <tr>
                 <th scope="row">1</th>
-                <td>Nombre alumna</td>
+                <td id="studentsName"></td>
                 <td>X%</td>
                 <td>X%</td>
                 <td>X%</td>
                 <td>X%</td>
                 <td>X%</td>
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Nombre alumna</td>
-                <td>X%</td>
-                <td>X%</td>
-                <td>X%</td>
-                <td>X%</td>
-                <td>X%</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Nombre alumna</td>
-                <td>X%</td>
-                <td>X%</td>
-                <td>X%</td>
-                <td>X%</td>
-                <td>X%</td>
-              </tr>
+
             </tbody>
           </table>
         </section>
