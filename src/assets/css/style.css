@@ -65,6 +65,10 @@ button {
   font-weight: bold;
 }
 
+.cohortBtn {
+  margin: 0;
+}
+
 /* Estilos de la sección principal */
 .main {
   height: 90vh;
