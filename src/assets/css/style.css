@@ -57,7 +57,7 @@ img {
 
 .bar{
   text-align: center;
-  background-color:#ff2323 ;
+  background-color:#fafafa;
 }
 
 button {
@@ -93,6 +93,10 @@ button:focus {
   margin-right: 5%;
 }
 
+/*barra de progreso*/
+.progress{
+  margin: 5% 3% 0% 2.8%;
+}
 /* Información de Alumnas */
 
 .generalInfo, .studentsProfile {
