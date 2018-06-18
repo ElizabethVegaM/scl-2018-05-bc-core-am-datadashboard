@@ -1,4 +1,5 @@
 .container-fluid {
+  padding: 0;
   text-align: initial;
   align-items: center;
   font-family: 'Bitter', serif;
@@ -10,10 +11,15 @@ header {
   padding-top: 5px;
 }
 
+#expandMenu {
+  display: none;
+}
+
 .no-gutters {
   padding-right: 0;
   padding-left: 0;
 }
+
 
 /* Estilos de Tipografías*/
 h1 {
@@ -26,10 +32,16 @@ h4, .card-body, .list {
 }
 
 /* Estilos de la barra lateral*/
-aside {
+#sidebar {
   height: 90vh;
   background-color: #fafafa;
   text-align: center;
+  display: inline-block;
+  position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
 }
 
 #logo {
@@ -112,3 +124,17 @@ tbody {
   text-align: initial;
 }
 
+/* Media queries */
+
+@media (min-width: 425px) and (max-width: 768px) {
+  [class*='col-'] {
+    width: 100%;
+    text-align: center;
+  }
+  #logo, #sidebar {
+    display: none;
+  }
+  #expandMenu {
+    display: inline;
+  }
+}

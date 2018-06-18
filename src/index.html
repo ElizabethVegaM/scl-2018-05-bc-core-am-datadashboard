@@ -14,29 +14,22 @@
 
 <body>
   <div class="container-fluid">
-    <!-- Primer Row -->
-    <div class="row firstR">
-      <div class="logo col-3">
+
+    <aside id="sidebar" class="col-3 no-gutters">
+      <div id="logo">
         <img src="assets/img/Laboratoria-classic.png" alt="">
       </div>
-      <!-- Header -->
-      <header class="col-9">
-        <h1>Cohorts</h1>
-      </header>
-    </div>
-    <!-- Segundo row -->
-    <div class="row">
-      <aside class="col-3 no-gutters">
-        <div id="round">
-        </div>
-        <div id="info">
-          <h4>Nombre</h4>
-        </div>
-        <div>
-          <h3>Listado de Cohorts</h3>
-        </div>
-        <!-- Menú desplegable para elección de país -->
-        <section class="bar">
+      <div id="round">
+      </div>
+      <div id="info">
+        <h4>Nombre</h4>
+      </div>
+      <div>
+        <h3>Listado de Cohorts</h3>
+      </div>
+      <!-- Menú desplegable para elección de país -->
+      <section class="bar">
+        <div class="accordion" id="accordionExample">
           <!-- Sao Paulo cohorts -->
           <div class="card">
             <div class="card-header" id="headingOne">
@@ -135,83 +128,88 @@
               </ul>
             </div>
           </div>
-        </section>
-      </aside>
+        </div>
+      </section>
+    </aside>
 
-      <!-- Sección principal -->
-      <article id="mainInfo" class="main col-9 d-none">
+    <!-- Header -->
+    <header class="col-9 ml-auto fixed-top">
+      <span>
+        <button id="expandMenu"></button>
+        <h1>Cohorts</h1>
+      </span>
+    </header>
 
-        <!-- Información general del curso -->
-        <section class="generalInfo">
-          <h2>Estadísticas Generales del Cohort</h2>
-          <div class="row">
-            <div id="readsCohort" class="col infoBox">
-              <h4>LECTURAS</h4>
-              <h2>%</h2>
-            </div>
-            <div id="quizzesCohort" class="col infoBox">
-              <h4>QUIZ</h4>
-              <h2>%</h2>
-            </div>
-            <div id="challengesCohort" class="col infoBox">
-              <h4>RETOS</h4>
-              <h2>%</h2>
-            </div>
-            <div id="progressCohort" class="col totalBox">
-              <h4>TOTAL</h4>
-              <h2>%</h2>
-            </div>
+    <!-- Sección principal -->
+    <div id="mainInfo" class="main col-9 ml-auto d-none">
+
+      <!-- Información general del curso -->
+      <article class="generalInfo">
+        <h2>Estadísticas Generales del Cohort</h2>
+        <section class="row">
+          <div id="readsCohort" class="col infoBox">
+            <h4>LECTURAS</h4>
+            <h2>%</h2>
           </div>
-        </section>
-
-        <!-- Barra de progreso -->
-        <section class="progressBar">
-          <div class="progress">
-            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-              aria-valuemax="100" style="width: 75%"></div>
+          <div id="quizzesCohort" class="col infoBox">
+            <h4>QUIZ</h4>
+            <h2>%</h2>
           </div>
-        </section>
-
-        <!-- Información de Alumnas -->
-        <section class="studentsProfile row">
-          <h3>Listado de Alumnas</h3>
-        </section>
-        <!-- Tabla de Ranking -->
-        <section id="ranking" class="studentList row">
-          <table class="table col-lg-12">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Lecturas realizadas</th>
-                <th scope="col">Quizzes Completados</th>
-                <th scope="col">Retos Completados</th>
-                <th scope="col">Tiempo consumido</th>
-                <th scope="col">Progreso (%)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td id="studentsName"></td>
-                <td>X%</td>
-                <td>X%</td>
-                <td>X%</td>
-                <td>X%</td>
-                <td>X%</td>
-              </tr>
-
-            </tbody>
-          </table>
+          <div id="challengesCohort" class="col infoBox">
+            <h4>RETOS</h4>
+            <h2>%</h2>
+          </div>
+          <div id="progressCohort" class="col totalBox">
+            <h4>TOTAL</h4>
+            <h2>%</h2>
+          </div>
         </section>
       </article>
+
+      <!-- Barra de progreso -->
+      <article class="progressBar">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+            aria-valuemax="100" style="width: 75%"></div>
+        </div>
+      </article>
+
+      <!-- Información de Alumnas -->
+      <article class="studentsProfile row">
+        <h3>Listado de Alumnas</h3>
+      </article>
+      <!-- Tabla de Ranking -->
+      <article id="ranking" class="studentList row">
+        <table id="studentsRanking" class="table col-lg-12">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Lecturas realizadas</th>
+              <th scope="col">Quizzes Completados</th>
+              <th scope="col">Retos Completados</th>
+              <th scope="col">Tiempo consumido</th>
+              <th scope="col">Progreso (%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td id="studentsName"></td>
+              <td>X%</td>
+              <td>X%</td>
+              <td>X%</td>
+              <td>X%</td>
+              <td>X%</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </article>
     </div>
+
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
