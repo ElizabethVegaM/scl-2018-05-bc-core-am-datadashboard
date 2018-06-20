@@ -2,15 +2,8 @@ const asideBtn = document.getElementById('expandMenu')
 const usersBtn = document.getElementById('show');
 const tableName = document.getElementById('studentsName');
 const hiddingElement = document.getElementById('mainInfo');
-const usersJSON = '../../../data/cohorts/lim-2018-03-pre-core-pw/users.json';
 
-fetch(usersJSON)
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    renderUsers(data);
-  })
-
+/*
 asideBtn.addEventListener('click', () => {
   const logo = document.getElementById('logo');
   const sidebar = document.getElementById('sidebar');
@@ -24,14 +17,28 @@ asideBtn.addEventListener('click', () => {
     sidebar.style.display = 'none';
   }
 })
+*/
+
+// Proceso de impresión de los datos recibidos en una tabla 
+usersBtn.addEventListener('click', () => {
+  hiddingElement.classList.remove('d-none');
+})
 
 
+/*
 const renderUsers = data => {
-  usersBtn.addEventListener('click', () => {
-    hiddingElement.classList.remove('d-none');
-    const render = data.forEach(element => {
-      return tableName.innerHTML += `<p>${element.name.toUpperCase()}</p>`
-    })
-    return render;
+  let rankingNumber = 0;
+  const render = data.forEach(element => {
+    rankingNumber++;
+    tableName.innerHTML += '<tr>' +
+      '<td>' + rankingNumber + '</td>' +
+      '<td>' + data[rankingNumber - 1].name.toUpperCase() + '</td>' +
+      '<td>' + +'</td>' +
+      '<td>' + +'</td>' +
+      '<td>' + +'</td>' +
+      '<td>' + +'</td>' +
+      '<td>' + +'</td>' +
+      '</tr>'
   })
 }
+*/
