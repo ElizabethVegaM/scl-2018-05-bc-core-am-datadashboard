@@ -83,6 +83,7 @@ button {
 /* Estilos de la sección principal */
 
 .main {
+  float: right;
   text-align: center;
 }
 
