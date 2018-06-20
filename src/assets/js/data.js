@@ -2,6 +2,7 @@ window.onload = () => {
   database();
 }
 
+// Variables vacías que guardarán los archivos json
 let users = {};
 let cohorts = {};
 let progress = {};
@@ -36,66 +37,113 @@ const database = () => {
 
 // Calcular lecturas
 window.getReadings = (users, progress) => {
+  // Declaro un objeto constructor de exercizes que guadrará la información final
+  class Reads {
+    constructor(total, completed, percent) {
+      this.total = total,
+      this.completed = completed,
+      this.percent = percent
+    }
+  }
+
+  // 
   let courses = Object.entries(progress).find(element => element[0] == users.id)[1];
-  console.log(courses);
   let units = Object.entries(courses.intro.units);
-  console.log(units);
   let readings = 0;
   let completedReadings = 0;
+  let readingsPercent;
   for (let i = 0; i < units.length; i++) {
     let parts = Object.entries(units[i][1].parts);
-    console.log(parts);
     for (let j = 0; j < parts.length; j++) {
       let chapter = parts[j][1];
-      console.log(chapter);
       if (chapter.type == 'read') {
         readings++;
-        console.log(readings);
       }
       if (chapter.type == 'read' && chapter.completed == 1) {
         completedReadings++;
-        console.log(completedReadings);
       }
-      console.log(`estas ${readings} y estas ${completedReadings}`);
     }
-    let readingsPercent = (completedReadings / readings) * 100;
-    console.log(readingsPercent);
+    readingsPercent = (completedReadings / readings) * 100;
   };
+  let reads = new Reads(readings, completedReadings, readingsPercent)
+  return reads;
 }
 
 // Calcular ejercicios
 window.getExercizes = (users, progress) => {
+  // Declaro un objeto constructor de exercizes que guadrará la información final
+  class Exercizes {
+    constructor(total, completed, percent) {
+      this.total = total,
+      this.completed = completed,
+      this.percent = percent
+    }
+  }
   let courses = Object.entries(progress).find(element => element[0] == users.id)[1];
-  console.log(courses);
   let units = Object.entries(courses.intro.units);
-  console.log(units);
-  let exercizes = 0;
-  let completedExercizes = 0;
+  let exercize = 0;
+  let completedExercize = 0;
+  let exercizePercent;
+  let exercizes;
   for (let i = 0; i < units.length; i++) {
     let parts = Object.entries(units[i][1].parts);
-    console.log(parts);
     for (let j = 0; j < parts.length; j++) {
       let chapter = parts[j][1];
-      console.log(chapter);
       if (chapter.type == 'practice') {
-        exercizes++;
-        console.log(exercizes);
+        exercize++;
       }
       if (chapter.type == 'practice' && chapter.completed == 1) {
-        completedExercizes++;
-        console.log(completedExercizes);
+        completedExercize++;
       }
-      console.log(`estas ${exercizes} y estas ${completedExercizes}`);
     }
-    let exercizesPercent = (completedExercizes / exercizes) * 100;
-    console.log(exercizesPercent);
+    exercizePercent = (completedExercize / exercize) * 100;
   };
+  exercizes = new Exercizes(exercize, completedExercize, exercizePercent);
+  return exercizes;
 }
 
+// Calcular quizzes
+window.getQuizzes = (users, progress) => {
+  // Declaro un objeto constructor de exercizes que guadrará la información final
+  class Quizzes {
+    constructor(total, completed, percent, scoreSum, scoreAvg) {
+      this.total = total,
+      this.completed = completed,
+      this.percent = percent,
+      this.scoreSum = scoreSum,
+      this.scoreAvg = scoreAvg
+    }
+  }
+
+  let courses = Object.entries(progress).find(element => element[0] == users.id)[1];
+  let units = Object.entries(courses.intro.units);
+  let quiz = 0;
+  let completedQuiz = 0;
+  let scoreSum = 0;
+  let scoreAvg = 0;
+  let quizzes;
+  let quizPercent;
+  for (let i = 0; i < units.length; i++) {
+    let parts = Object.entries(units[i][1].parts);
+    for (let j = 0; j < parts.length; j++) {
+      let chapter = parts[j][1];
+      if (chapter.type == 'quiz') {
+        quiz++;
+      }
+      if (chapter.type == 'quiz' && chapter.completed == 1) {
+        completedQuiz++;
+        scoreSum += chapter.score;
+      }
+    }
+    quizPercent = (completedQuiz / quiz) * 100;
+    scoreAvg = scoreSum / completedQuiz;
+  };
+  quizzes = new Quizzes(quiz, completedQuiz, quizPercent, scoreSum, scoreAvg);
+  return quizzes;
+}
 
 window.computeUsersStats = (user, progress, courses) => {
   let userId = user.id;
-
 
 };
 
