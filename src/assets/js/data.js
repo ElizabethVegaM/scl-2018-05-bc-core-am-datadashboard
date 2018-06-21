@@ -66,21 +66,29 @@ class Quizzes {
 }
 
 window.computeUsersStats = (users, progress, courses) => {
-  return users.map(users => {
-    return window.computeUserStats(users, progress, courses);
-  });
+  let cohort = courses[31].coursesIndex;
+  let progressArr = Object.entries(progress);
+  console.log(progressArr);
+  for (let i = 0; i < progressArr.length; i++) {
+    let user = users[i].id;
+    console.log(user);
+    if (user === progressArr[i][0]) {
+      let userCourses = Object.entries(progressArr[i][1]);
+      console.log(userCourses);
+      let intro = userCourses[0][1];
+      console.log(intro);
+      let units = Object.entries(intro.units);
+      console.log(units);      
+      let percent = intro.percent;
+      let userStats = new Stats(percent, getReadings(units), getExercizes(units), getQuizzes(units));
+      let users = new User(userStats);
+      return users;
+    }
+  };
 };
 
 window.computeUserStats = (user, progress, courses) => {
-  let userId = user.id;
-  let cohort = courses[31].coursesIndex;
-  let userCourses = Object.entries(progress).find(element => element[0] === userId); 
-  let intro = Object.entries(userCourses[1]);
-  let units = Object.entries(intro[0][1].units);
-  let percent = intro[0][1].percent;
-  let userStats = new Stats(percent, getReadings(units), getExercizes(units), getQuizzes(units));
-  let users = new User(userStats);
-  return users;
+
 };
 
 window.sortUsers = (users, orderBy, orderDirection) => {
@@ -179,3 +187,4 @@ window.getQuizzes = (units) => {
   quizzes = new Quizzes(quiz, completedQuiz, quizPercent, scoreSum, scoreAvg);
   return quizzes;
 };
+
