@@ -190,29 +190,4 @@ class User {
       }
     }
 
-
-class Exercizes {
-    constructor(total, completed, percent) {
-      this.total = total,
-      this.completed = completed,
-      this.percent = percent
-    }
-  }
-
-  class Reads {
-    constructor(total, completed, percent) {
-      this.total = total,
-      this.completed = completed,
-      this.percent = percent
-    }
-  }
-
-  class Quizzes {
-    constructor(total, completed, percent, scoreSum, scoreAvg) {
-      this.total = total,
-      this.completed = completed,
-      this.percent = percent,
-      this.scoreSum = scoreSum,
-      this.scoreAvg = scoreAvg
-    }
-  } */
+*/

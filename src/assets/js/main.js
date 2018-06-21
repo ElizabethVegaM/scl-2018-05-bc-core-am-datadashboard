@@ -8,6 +8,7 @@ const hiddingElement = document.getElementById('mainInfo');
 usersBtn.addEventListener('click', () => {
   hiddingElement.classList.remove('d-none');
 })
+
 /*
 
 const renderUsers = data => {
