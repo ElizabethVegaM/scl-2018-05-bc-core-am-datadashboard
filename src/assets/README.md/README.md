@@ -7,15 +7,15 @@ A través de una entrevista realizada en clases el día miércoles 6 de junio de
 
 Primero para comenzar con el aspecto visual tuvimos que crear un diagrama de flujo de como seria interpretado los datos(img).
 
-![alt text]https://github.com/ElizabethVegaM/scl-2018-05-bc-core-am-datadashboard/blob/master/src/assets/img/IMG_20180608_125730.jpg?raw=true
+![alt text](https://github.com/ElizabethVegaM/scl-2018-05-bc-core-am-datadashboard/blob/master/src/assets/img/IMG_20180608_125730.jpg?raw=true)
 
-![alt text]https://raw.githubusercontent.com/ElizabethVegaM/scl-2018-05-bc-core-am-datadashboard/master/src/assets/img/IMG_20180608_130431.jpg
+![alt text](https://raw.githubusercontent.com/ElizabethVegaM/scl-2018-05-bc-core-am-datadashboard/master/src/assets/img/IMG_20180608_130431.jpg?raw=true)
 
 
 Nuestro principal fuente de referencia es la plataforma LMS, nuestra primera preocupación fue entrelazar los distintos sedes y la subdivisión en cohorts tomando en cuenta la ruta de aprendizaje y las necesidades globales de las training manager en ese espacio. 
 A continuación podrá ver en un par de sketch la idea original y como pensamos seria la forma mas cómoda de ver los datos para su posterior interpretación.
 
-![alt text]https://www.figma.com/file/DvjVJ4mgqbf1nq2LgVZyIwan/Dashboard
+![alt text](https://www.figma.com/file/DvjVJ4mgqbf1nq2LgVZyIwan/Dashboard)
 
 
 Experiencia de usuario: a continuación se explicara paso a paso como funciona la plataforma.
