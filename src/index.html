@@ -14,183 +14,207 @@
 
 <body>
   <div class="container-fluid">
-    <!-- Primer Row -->
-    <div class="row firstR">
-      <div class="logo col-3">
+
+    <aside id="sidebar" class="col-3 no-gutters">
+      <div id="logo">
         <img src="assets/img/Laboratoria-classic.png" alt="">
       </div>
-      <!-- Header -->
-      <header class="col-9">
+      <div id="round">
+      </div>
+      <div id="info">
+        <h4>Nombre</h4>
+      </div>
+      <div>
+        <h3>Listado de Cohorts</h3>
+      </div>
+      <!-- Menú desplegable para elección de país -->
+      <section class="bar">
+        <div class="accordion" id="accordionExample">
+          <!-- Sao Paulo cohorts -->
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
+                aria-controls="collapseOne">
+                SAO PAULO - BR
+              </button>
+            </div>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <button class="cohortBtn">Cohort AM</button>
+                </li>
+                <li class="nav-item">
+                  <button class="cohortBtn">Cohort PM</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Santiago de Chile cohorts -->
+          <div class="card-header" id="headingTwo">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+              aria-controls="collapseTwo">
+              SANTIAGO DE CHILE - CL
+            </button>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <button class="cohortBtn">Cohort AM</button>
+              </li>
+              <li class="nav-item">
+                <button class="cohortBtn">Cohort PM</button>
+              </li>
+            </ul>
+          </div>
+          <!-- Guadalajara cohorts -->
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                aria-controls="collapseThree">
+                GUADALAJA - MX
+              </button>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <li class="nav-item">
+                    <button class="cohortBtn">Cohort AM</button>
+                  </li>
+                  <li class="nav-item">
+                    <button class="cohortBtn">Cohort PM</button>
+                  </li>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Mexico DF cohorts -->
+          <div class="card">
+            <div class="card-header" id="headingFour">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false"
+                aria-controls="collapseFour">
+                CIUDAD DE MÉXICO - MX
+              </button>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <button class="cohortBtn">Cohort AM</button>
+                </li>
+                <li class="nav-item">
+                  <button class="cohortBtn">Cohort PM</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Lima cohorts -->
+          <div class="card">
+            <div class="card-header" id="headingFive">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false"
+                aria-controls="collapseFive">
+                LIMA - PE
+              </button>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <button id="show" class="cohortBtn">Cohort AM</button>
+                </li>
+                <li class="nav-item">
+                  <button class="cohortBtn">Cohort PM</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </aside>
+
+    <!-- Header -->
+    <header class="col-9 ml-auto fixed-top">
+      <span>
+        <button id="expandMenu"></button>
         <h1>Cohorts</h1>
-      </header>
-    </div>
-    <!-- Segundo row -->
-    <div class="row">
-      <aside class="col-3 no-gutters">
-        <div id="round">
-        </div>
-        <div id="info">
-          <h4>Nombre</h4>
-        </div>
-        <div>
-          <h3>Listado de Cohorts</h3>
-        </div>
-        <!-- Menú acordeón para elección de país -->
-        <section class="bar">
-            <div class="accordion" id="accordionExample">
-                <div class="card"></div>
-                    <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                      SAO PAULO -BR
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                        <div class="card-body">
-                            <button>COHORT AM</button>                            
-                        </div>
-                        <div class="card-body">
-                            <button>COHORT PM</button>
-                    </div>
-                </div>
-    
-                <div class="card">
-                  <div class="card-header" id="headingTwo">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        SANTIAGO DE CHILE -CL
-                      </button>
-                    </h5>
-                  </div>
-                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                    <div class="card-body">
-                       <button>COHORT AM</button>                            
-                    </div>
-                    <div class="card-body">
-                       <button>COHORT PM</button>
-                    </div>
-                  </div>
-    
-                <div class="card">
-                  <div class="card-header" id="headingThree">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        GUADALAJA - MX
-                      </button>
-                    </h5>
-                  </div>
-                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <button>COHORT AM</button>                            
-                    </div>
-                    <div class="card-body">
-                          <button>COHORT PM</button>
-                    </div>
-                  </div> 
-    
-                  <div class="card">
-                        <div class="card-header" id="headingFour">
-                          <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                              CUIDAD DE MÉXICO -MX
-                            </button>
-                          </h5>
-                        </div>
-                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-                          <div class="card-body">
-                             <button>COHORT AM</button>                            
-                          </div>
-                          <div class="card-body">
-                             <button>COHORT PM</button>
-                          </div>
-                        </div>
-                        <div class="card">
-                                <div class="card-header" id="headingFive">
-                                  <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                      LIMA - PE
-                                    </button>
-                                  </h5>
-                                </div>
-                                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
-                                  <div class="card-body">
-                                     <button>COHORT AM</button>                            
-                                  </div>
-                                  <div class="card-body">
-                                     <button>COHORT PM</button>
-                                  </div>
-                                </div>
-    
-    
-            </div>
-        </section>
-      </aside>
-      <!-- Sección principal -->
-      <article class="main col-9">
-        <!-- Información general del curso -->
-        <section class="generalInfo">
-          <h2>Estadísticas Generales del Cohort</h2>
-          <div class="row">
-            <div id="readsCohort" class="col infoBox">
-              <h4>LECTURAS</h4>
-              <h2>%</h2>
-            </div>
-            <div id="quizzesCohort" class="col infoBox">
-              <h4>QUIZ</h4>
-              <h2>%</h2>
-            </div>
-            <div id="challengesCohort" class="col infoBox">
-              <h4>RETOS</h4>
-              <h2>%</h2>
-            </div>
-            <div id="progressCohort" class="col totalBox">
-              <h4>TOTAL</h4>
-              <h2>%</h2>
-            </div>
+      </span>
+    </header>
+
+    <!-- Sección principal -->
+    <div id="mainInfo" class="main col-9 ml-auto d-none">
+
+      <!-- Información general del curso -->
+      <article class="generalInfo">
+        <h2>Estadísticas Generales del Cohort</h2>
+        <section class="row">
+          <div id="readsCohort" class="col infoBox">
+            <h4>LECTURAS</h4>
+            <h2>%</h2>
           </div>
-        </section>
-        <section>
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-              </div>
-       </section>
-        <!-- Información de Alumnas -->
-        <section class="studentsProfile row">
-          <h3>Listado de Alumnas</h3>
-          <div class="input-group">
-            <select class="custom-select" id="inputGroupSelect04">
-              <option selected>Seleccionar...</option>
-              <option value="" class="list">One</option>
-            </select>
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button">VER</button>
-            </div>
+          <div id="quizzesCohort" class="col infoBox">
+            <h4>QUIZ</h4>
+            <h2>%</h2>
           </div>
-        </section>
-        <section class="studentInfo row justify-content-center">
-          <div class="info col">
-            <h4>Nombre alumna</h4>
-            <h6>ID: </h6>
+          <div id="challengesCohort" class="col infoBox">
+            <h4>RETOS</h4>
+            <h2>%</h2>
+          </div>
+          <div id="progressCohort" class="col totalBox">
+            <h4>TOTAL</h4>
+            <h2>%</h2>
           </div>
         </section>
       </article>
 
-      <!--Accessibility
-Be sure to add aria-expanded to the control element. This attribute explicitly conveys the current state of the collapsible element tied to the control to screen readers and similar assistive technologies. If the collapsible element is closed by default, the attribute on the control element should have a value of aria-expanded="false". If you’ve set the collapsible element to be open by default using the show class, set aria-expanded="true" on the control instead. The plugin will automatically toggle this attribute on the control based on whether or not the collapsible element has been opened or closed (via JavaScript, or because the user triggered another control element also tied to the same collapsbile element). If the control element’s HTML element is not a button (e.g., an <a> or <div>), the attribute role="button" should be added to the element.
-If your control element is targeting a single collapsible element – i.e. the data-target attribute is pointing to an id selector – you should add the aria-controls attribute to the control element, containing the id of the collapsible element. Modern screen readers and similar assistive technologies make use of this attribute to provide users with additional shortcuts to navigate directly to the collapsible element itself.-->
+      <!-- Barra de progreso -->
+      <article class="progressBar">
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+            aria-valuemax="100" style="width: 75%"></div>
+        </div>
+      </article>
 
+      <!-- Input de búsqueda -->
+      <article class="searchField">
+        <div>
+          <input class="form-control" id="myInput" type="text" placeholder="Search..">
+        </div>
+      </article>
+
+      <!-- Información de Alumnas -->
+      <article class="studentsProfile row">
+        <h3>Listado de Alumnas</h3>
+      </article>
+      <!-- Tabla de Ranking -->
+      <article id="ranking" class="studentList row">
+        <table id="studentsRanking" class="table col-lg-12">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Lecturas realizadas</th>
+              <th scope="col">Quizzes Completados</th>
+              <th scope="col">Retos Completados</th>
+              <th scope="col">Progreso (%)</th>
+            </tr>
+          </thead>
+          <tbody id="studentsName">
+
+          </tbody>
+        </table>
+      </article>
     </div>
+
   </div>
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+    crossorigin="anonymous"></script>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/main.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
 </body>
 

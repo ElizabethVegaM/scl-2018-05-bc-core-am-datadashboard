@@ -1,4 +1,5 @@
 .container-fluid {
+  padding: 0;
   text-align: initial;
   align-items: center;
   font-family: 'Bitter', serif;
@@ -10,26 +11,40 @@ header {
   padding-top: 5px;
 }
 
+#expandMenu {
+  display: none;
+}
+
 .no-gutters {
   padding-right: 0;
   padding-left: 0;
 }
 
 /* Estilos de Tipografías*/
+
 h1 {
   font-size: 50px;
 }
 
-h4, .card-body, .list {
+h4,
+.card-body,
+.list {
   font-family: 'Open Sans';
   font-weight: bold;
 }
 
 /* Estilos de la barra lateral*/
-aside {
-  height: 90vh;
+
+#sidebar {
+  height: 100vh;
   background-color: #fafafa;
   text-align: center;
+  display: inline-block;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
 }
 
 #logo {
@@ -55,9 +70,9 @@ img {
   margin: 10px 0px 20px 0px;
 }
 
-.bar{
+.bar {
   text-align: center;
-  background-color:#fafafa;
+  background-color: #fafafa;
 }
 
 button {
@@ -65,19 +80,17 @@ button {
   font-weight: bold;
 }
 
-button:focus {
-  background-color: #ff0093;
-}
-
 /* Estilos de la sección principal */
+
 .main {
-  height: 90vh;
+  float: right;
   text-align: center;
 }
 
 /* Información General del Cohort*/
 
-.infoBox, .totalBox {
+.infoBox,
+.totalBox {
   margin-top: 2%;
   border: 1px solid #ced4da;
   text-align: center;
@@ -86,33 +99,52 @@ button:focus {
 
 .totalBox {
   margin-left: 2%;
-  background-color:  #56f89a;
+  background-color: #56f89a;
 }
 
-.infoBox, .info {
+.infoBox,
+.info {
   margin-right: 5%;
 }
 
-/*barra de progreso*/
-.progress{
-  margin: 5% 3% 0% 2.8%;
+/* Barra de progreso */
+
+.progressBar {
+  margin: 3% 3.5% 0% 3.5%;
 }
+
 /* Información de Alumnas */
 
-.generalInfo, .studentsProfile {
-  margin-top: 2%;
+.generalInfo,
+.studentsProfile {
+  margin-top: 8%;
   padding: 0% 5%;
 }
 
-.studentInfo {
-  margin-top: 2%;
-  
+.studentList {
+  margin: 0% 3.5% 0% 3.5%;
 }
 
-.info {
-  margin-left: 5%;
+table {
   border: 1px solid #ced4da;
-  height: 40vh;
-  padding-top: 1%;
+}
+
+tbody {
   text-align: initial;
+}
+
+/* Media queries */
+
+@media (min-width: 425px) and (max-width: 768px) {
+  [class*='col-'] {
+    width: 100%;
+    text-align: center;
+  }
+  #logo,
+  #sidebar {
+    display: none;
+  }
+  #expandMenu {
+    display: inline;
+  }
 }
