@@ -1,4 +1,4 @@
-const asideBtn = document.getElementById('expandMenu')
+const asideBtn = document.getElementById('expandMenu');
 const usersBtn = document.getElementById('show');
 const tableName = document.getElementById('studentsName');
 const hiddingElement = document.getElementById('mainInfo');
@@ -7,7 +7,8 @@ const hiddingElement = document.getElementById('mainInfo');
 // Proceso de impresión de los datos recibidos en una tabla 
 usersBtn.addEventListener('click', () => {
   hiddingElement.classList.remove('d-none');
-})
+
+});
 
 /*
 

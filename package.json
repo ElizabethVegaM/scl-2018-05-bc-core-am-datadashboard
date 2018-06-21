@@ -18,5 +18,6 @@
     "mocha": "^5.1.1",
     "nyc": "^11.7.1",
     "opener": "^1.4.3"
-  }
+  },
+  "eslintIgnore" : ["test/fixtures.js"]
 }
