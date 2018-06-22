@@ -7,7 +7,6 @@ const hiddingElement = document.getElementById('mainInfo');
 // Proceso de impresión de los datos recibidos en una tabla 
 usersBtn.addEventListener('click', () => {
   hiddingElement.classList.remove('d-none');
-
 });
 
 /*

@@ -13,6 +13,7 @@ const database = () => {
     .then(response => response.json())
     .then(data => {
       users = data;
+      console.log(users);
     });
 
   fetch('../../../data/cohorts.json')
@@ -66,29 +67,33 @@ class Quizzes {
 }
 
 window.computeUsersStats = (users, progress, courses) => {
+  let processed = [];
   let cohort = courses[31].coursesIndex;
   let progressArr = Object.entries(progress);
   console.log(progressArr);
   for (let i = 0; i < progressArr.length; i++) {
     let user = users[i].id;
     console.log(user);
-    if (user === progressArr[i][0]) {
-      let userCourses = Object.entries(progressArr[i][1]);
+    if (user === progressArr[i][0] && users[i].role === 'student') {
+      let userCourses = Object.entries(progressArr[i][1]);   
       console.log(userCourses);
-      let intro = userCourses[0][1];
-      console.log(intro);
-      let units = Object.entries(intro.units);
-      console.log(units);      
-      let percent = intro.percent;
-      let userStats = new Stats(percent, getReadings(units), getExercizes(units), getQuizzes(units));
-      let users = new User(userStats);
-      return users;
+      if (userCourses.length === 0) {
+        userCourses = 'Sin Info';
+        processed.push(users);
+      } else {
+        let intro = userCourses[0][1];
+        console.log(intro);
+        let units = Object.entries(intro.units);
+        console.log(units);
+        let percent = intro.percent;
+        let userStats = new Stats(percent, getReadings(units), getExercizes(units), getQuizzes(units));
+        let users = new User(userStats);
+        console.log(users);
+        processed.push(users);
+      }
     }
-  };
-};
-
-window.computeUserStats = (user, progress, courses) => {
-
+  }
+  return processed;
 };
 
 window.sortUsers = (users, orderBy, orderDirection) => {
@@ -188,3 +193,18 @@ window.getQuizzes = (units) => {
   return quizzes;
 };
 
+const renderUsers = data => {
+  let rankingNumber = 0;
+  const render = data.forEach(element => {
+    rankingNumber++;
+    tableName.innerHTML += '<tr>' +
+      '<td>' + rankingNumber + '</td>' +
+      '<td>' + data[rankingNumber - 1].name.toUpperCase() + '</td>' +
+      '<td>' + +'</td>' +
+      '<td>' + +'</td>' +
+      '<td>' + +'</td>' +
+      '<td>' + +'</td>' +
+      '<td>' + +'</td>' +
+      '</tr>';
+  });
+};
