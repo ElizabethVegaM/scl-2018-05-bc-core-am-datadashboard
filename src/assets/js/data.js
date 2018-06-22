@@ -66,20 +66,22 @@ class Quizzes {
   }
 }
 
-window.computeUsersStats = (users, progress, courses) => {
+document.getElementById('show').addEventListener('click', () => {
+  hiddingElement.classList.remove('d-none');
+  renderUsers(users, computeUsersStats(users, progress));
+});
+
+window.computeUsersStats = (users, progress) => {
   let processed = [];
-  let cohort = courses[31].coursesIndex;
   let progressArr = Object.entries(progress);
-  console.log(progressArr);
+  let user = users;
   for (let i = 0; i < progressArr.length; i++) {
-    let user = users[i].id;
-    console.log(user);
-    if (user === progressArr[i][0] && users[i].role === 'student') {
-      let userCourses = Object.entries(progressArr[i][1]);   
+    user = users[i].id;
+    if (user === progressArr[i][0]) {
+      let userCourses = Object.entries(progressArr[i][1]);
       console.log(userCourses);
       if (userCourses.length === 0) {
-        userCourses = 'Sin Info';
-        processed.push(users);
+        processed.push('Usuario no tiene información que mostrar');
       } else {
         let intro = userCourses[0][1];
         console.log(intro);
@@ -193,18 +195,29 @@ window.getQuizzes = (units) => {
   return quizzes;
 };
 
-const renderUsers = data => {
+const renderUsers = (user, processed) => {
+  console.log(processed);
   let rankingNumber = 0;
-  const render = data.forEach(element => {
+  for (let i = 0; i < processed.length; i++) {
     rankingNumber++;
-    tableName.innerHTML += '<tr>' +
-      '<td>' + rankingNumber + '</td>' +
-      '<td>' + data[rankingNumber - 1].name.toUpperCase() + '</td>' +
-      '<td>' + +'</td>' +
-      '<td>' + +'</td>' +
-      '<td>' + +'</td>' +
-      '<td>' + +'</td>' +
-      '<td>' + +'</td>' +
-      '</tr>';
-  });
+    if (processed[i] === 'Usuario no tiene información que mostrar' && user[i].role === 'student') {
+      tableName.innerHTML += '<tr>' +
+        '<td>' + rankingNumber + '</td>' +
+        '<td>' + user[i].name + '</td>' +
+        '<td>' + '-' + '</td>' +
+        '<td>' + '-' + '</td>' +
+        '<td>' + '-' + '</td>' +
+        '<td>' + '-' + '</td>' +
+        '</tr>';
+    } else if (user[i].role === 'student') {
+      tableName.innerHTML += '<tr>' +
+        '<td>' + rankingNumber + '</td>' +
+        '<td>' + user[i].name + '</td>' +
+        '<td>' + processed[i].stats.reads.percent + '%' + '</td>' +
+        '<td>' + processed[i].stats.quizzes.percent + '%' + '</td>' +
+        '<td>' + processed[i].stats.practice.percent + '%' + '</td>' +
+        '<td>' + processed[i].stats.percent + '%' + '</td>' +
+        '</tr>';
+    };
+  };
 };

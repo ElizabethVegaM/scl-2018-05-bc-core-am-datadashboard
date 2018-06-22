@@ -7,27 +7,10 @@ const hiddingElement = document.getElementById('mainInfo');
 // Proceso de impresión de los datos recibidos en una tabla 
 usersBtn.addEventListener('click', () => {
   hiddingElement.classList.remove('d-none');
+  computeUsersStats(users, progress, cohorts);
 });
 
 /*
-
-const renderUsers = data => {
-  let rankingNumber = 0;
-  const render = data.forEach(element => {
-    rankingNumber++;
-    tableName.innerHTML += '<tr>' +
-      '<td>' + rankingNumber + '</td>' +
-      '<td>' + data[rankingNumber - 1].name.toUpperCase() + '</td>' +
-      '<td>' + +'</td>' +
-      '<td>' + +'</td>' +
-      '<td>' + +'</td>' +
-      '<td>' + +'</td>' +
-      '<td>' + +'</td>' +
-      '</tr>'
-  })
-}
-
-
 asideBtn.addEventListener('click', () => {
   const logo = document.getElementById('logo');
   const sidebar = document.getElementById('sidebar');
@@ -40,5 +23,5 @@ asideBtn.addEventListener('click', () => {
   } else if (sidebar.style.display === 'block') {
     sidebar.style.display = 'none';
   }
-})
+});
 */
