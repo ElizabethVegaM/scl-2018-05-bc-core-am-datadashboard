@@ -113,11 +113,22 @@ button {
   margin: 3% 3.5% 0% 3.5%;
 }
 
+/* Input de búsqueda */
+
+.searchField {
+  margin-top: 2%;
+}
+
+#myInput {
+  margin-left: 3.5%;
+  width: 300px;
+}
+
 /* Información de Alumnas */
 
 .generalInfo,
 .studentsProfile {
-  margin-top: 8%;
+  margin-top: 3%;
   padding: 0% 5%;
 }
 
@@ -131,6 +142,10 @@ table {
 
 tbody {
   text-align: initial;
+}
+
+.numbers {
+  text-align: center;
 }
 
 /* Media queries */

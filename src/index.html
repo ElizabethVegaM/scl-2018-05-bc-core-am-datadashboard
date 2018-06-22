@@ -133,7 +133,7 @@
     </aside>
 
     <!-- Header -->
-    <header class="col-9 ml-auto fixed-top">
+    <header class="col-9 ml-auto">
       <span>
         <button id="expandMenu"></button>
         <h1>Cohorts</h1>
@@ -149,19 +149,19 @@
         <section class="row">
           <div id="readsCohort" class="col infoBox">
             <h4>LECTURAS</h4>
-            <h2>%</h2>
+            <h2 id="totalReads"></h2>
           </div>
           <div id="quizzesCohort" class="col infoBox">
             <h4>QUIZ</h4>
-            <h2>%</h2>
+            <h2 id="totalQuiz"></h2>
           </div>
           <div id="challengesCohort" class="col infoBox">
-            <h4>RETOS</h4>
-            <h2>%</h2>
+            <h4>EJERCICIOS</h4>
+            <h2 id="totalExercize"></h2>
           </div>
           <div id="progressCohort" class="col totalBox">
             <h4>TOTAL</h4>
-            <h2>%</h2>
+            <h2 id="totalCohort"></h2>
           </div>
         </section>
       </article>
@@ -177,7 +177,7 @@
       <!-- Input de búsqueda -->
       <article class="searchField">
         <div>
-          <input class="form-control" id="myInput" type="text" placeholder="Search..">
+          <input class="form-control" id="myInput" type="text" placeholder="Buscar alumna...">
         </div>
       </article>
 
@@ -185,6 +185,7 @@
       <article class="studentsProfile row">
         <h3>Listado de Alumnas</h3>
       </article>
+
       <!-- Tabla de Ranking -->
       <article id="ranking" class="studentList row">
         <table id="studentsRanking" class="table col-lg-12">
@@ -194,8 +195,8 @@
               <th scope="col">Nombre</th>
               <th scope="col">Lecturas realizadas</th>
               <th scope="col">Quizzes Completados</th>
-              <th scope="col">Retos Completados</th>
-              <th scope="col">Progreso (%)</th>
+              <th scope="col">Ejercicios Completados</th>
+              <th scope="col">Progreso General</th>
             </tr>
           </thead>
           <tbody id="studentsName">

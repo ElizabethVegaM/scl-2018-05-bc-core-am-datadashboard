@@ -13,7 +13,6 @@ const database = () => {
     .then(response => response.json())
     .then(data => {
       users = data;
-      console.log(users);
     });
 
   fetch('../../../data/cohorts.json')
@@ -69,6 +68,7 @@ class Quizzes {
 document.getElementById('show').addEventListener('click', () => {
   hiddingElement.classList.remove('d-none');
   renderUsers(users, computeUsersStats(users, progress));
+  calculateTotals(computeUsersStats(users, progress));
 });
 
 window.computeUsersStats = (users, progress) => {
@@ -79,18 +79,14 @@ window.computeUsersStats = (users, progress) => {
     user = users[i].id;
     if (user === progressArr[i][0]) {
       let userCourses = Object.entries(progressArr[i][1]);
-      console.log(userCourses);
       if (userCourses.length === 0) {
         processed.push('Usuario no tiene información que mostrar');
       } else {
         let intro = userCourses[0][1];
-        console.log(intro);
         let units = Object.entries(intro.units);
-        console.log(units);
         let percent = intro.percent;
         let userStats = new Stats(percent, getReadings(units), getExercizes(units), getQuizzes(units));
         let users = new User(userStats);
-        console.log(users);
         processed.push(users);
       }
     }
@@ -196,28 +192,51 @@ window.getQuizzes = (units) => {
 };
 
 const renderUsers = (user, processed) => {
-  console.log(processed);
   let rankingNumber = 0;
   for (let i = 0; i < processed.length; i++) {
     rankingNumber++;
     if (processed[i] === 'Usuario no tiene información que mostrar' && user[i].role === 'student') {
       tableName.innerHTML += '<tr>' +
         '<td>' + rankingNumber + '</td>' +
-        '<td>' + user[i].name + '</td>' +
-        '<td>' + '-' + '</td>' +
-        '<td>' + '-' + '</td>' +
-        '<td>' + '-' + '</td>' +
-        '<td>' + '-' + '</td>' +
+        '<td>' + user[i].name.toUpperCase() + '</td>' +
+        '<td class="numbers">' + '-' + '</td>' +
+        '<td class="numbers">' + '-' + '</td>' +
+        '<td class="numbers">' + '-' + '</td>' +
+        '<td class="numbers">' + '-' + '</td>' +
         '</tr>';
     } else if (user[i].role === 'student') {
       tableName.innerHTML += '<tr>' +
         '<td>' + rankingNumber + '</td>' +
-        '<td>' + user[i].name + '</td>' +
-        '<td>' + processed[i].stats.reads.percent + '%' + '</td>' +
-        '<td>' + processed[i].stats.quizzes.percent + '%' + '</td>' +
-        '<td>' + processed[i].stats.practice.percent + '%' + '</td>' +
-        '<td>' + processed[i].stats.percent + '%' + '</td>' +
+        '<td>' + user[i].name.toUpperCase() + '</td>' +
+        '<td class="numbers">' + Math.round(processed[i].stats.reads.percent) + '%' + '</td>' +
+        '<td class="numbers">' + Math.round(processed[i].stats.quizzes.percent) + '%' + '</td>' +
+        '<td class="numbers">' + Math.round(processed[i].stats.practice.percent) + '%' + '</td>' +
+        '<td class="numbers">' + Math.round(processed[i].stats.percent) + '%' + '</td>' +
         '</tr>';
     };
+  };
+};
+
+const calculateTotals = (processed) => {
+  let totalReads = 0;
+  let totalQuiz = 0;
+  let totalExercize = 0;
+  let totalCohort = 0;
+  for (let i = 0; processed.length; i++) {
+    if (processed[i] === 'Usuario no tiene información que mostrar') {
+      totalReads += 0;
+      totalQuiz += 0;
+      totalExercize += 0;
+      totalCohort += 0;
+    } else {
+      totalReads += processed[i].stats.reads.percent;
+      totalQuiz += processed[i].stats.quizzes.percent;
+      totalExercize += processed[i].stats.practice.percent;
+      totalCohort += processed[i].stats.percent;
+    }
+    document.getElementById('totalReads').innerHTML = Math.round(totalReads / processed.length) + '%';
+    document.getElementById('totalQuiz').innerHTML = Math.round(totalQuiz / processed.length) + '%';
+    document.getElementById('totalExercize').innerHTML = Math.round(totalExercize / processed.length) + '%';
+    document.getElementById('totalCohort').innerHTML = Math.round(totalCohort / processed.length) + '%';
   };
 };

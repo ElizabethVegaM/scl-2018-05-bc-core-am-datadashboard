@@ -4,12 +4,6 @@ const tableName = document.getElementById('studentsName');
 const hiddingElement = document.getElementById('mainInfo');
 
 
-// Proceso de impresión de los datos recibidos en una tabla 
-usersBtn.addEventListener('click', () => {
-  hiddingElement.classList.remove('d-none');
-  computeUsersStats(users, progress, cohorts);
-});
-
 /*
 asideBtn.addEventListener('click', () => {
   const logo = document.getElementById('logo');
