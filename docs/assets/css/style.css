@@ -1,0 +1,320 @@
+/* Estilos Generales de la página */
+
+.container-fluid {
+  padding: 0;
+  text-align: initial;
+  font-family: 'Bitter', serif;
+  display: flex;
+  width: 100%;
+  color: #2b2b2b;
+}
+
+.no-gutters {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/* Estilos de Textos */
+h1 {
+  float: left;
+}
+
+h2 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+h2, h4, H5,
+.cohortBtn,
+.card-body,
+.list {
+  font-family: 'Open Sans';
+  font-weight: bold;
+}
+
+/* Barra Lateral */
+
+#sidebar {
+  height: 100vh;
+  min-width: 350px;
+  max-width: 350px;
+  background: #fafafa;
+  transition: all 0.5s;
+  text-align: center;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: visible;
+  position: sticky;
+}
+
+#logo {
+  margin: 0 auto;
+  text-align: center;
+}
+
+img {
+  height: 70px;
+}
+
+#round {
+  margin: 0 auto;
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  background-color: #ced4da;
+}
+
+#info {
+  margin: 10px;
+  padding-bottom: 10px;
+  color: #7d8083;
+}
+
+#sidebar.active {
+  margin-left: -350px;
+}
+
+#sidebar .sidebar-header {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+
+.card-header {
+  padding: 0;
+}
+
+button {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  overflow: hidden;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: color, background-color;
+  transition-property: color, background-color;
+}
+
+.btn {
+  width: 100%;
+  border-radius: 0;
+  background: #f2f2f2;
+  padding: 10px 0px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: #ff009d;
+  box-shadow: 0px 10px 10px -4px rgba(0,0,0,0.47);
+}
+
+.cohortBtn {
+  width: 100%;
+  text-align: initial;
+  padding: 2px;
+}
+
+.cohortBtn:hover {
+  background: #56f89a;
+  box-shadow: 0px 10px 10px -4px rgba(0,0,0,0.47);
+}
+
+/* Header */
+
+header {
+  height: 70px;
+  background-color: #ffc107;
+  padding: 8px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/*Botón que visualiza la Barra Lateral */
+
+.navbar-btn {
+  box-shadow: none;
+  outline: none !important;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  float: right;
+  visibility: hidden;
+  background: #ffc107;
+}
+
+.animated-icon1 {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  margin: 0px;
+  cursor: pointer;
+}
+
+.animated-icon1 span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  background: #2b2b2b;
+  box-shadow: 5px 5px 10px -6px rgba(0,0,0,0.5);
+}
+
+.animated-icon1 span:nth-child(1) {
+  top: 0px;
+}
+
+.animated-icon1 span:nth-child(2) {
+  top: 10px;
+}
+
+.animated-icon1 span:nth-child(3) {
+  top: 20px;
+}
+
+/* Información General del Cohort*/
+
+#mainInfo {
+  margin: 0;
+  padding: 20px 30px;
+}
+
+.boxes {
+  padding: 0 15px;
+}
+
+.infoBox,
+.totalBox {
+  margin-top: 2%;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2%;
+  box-shadow: 10px 10px 20px -6px rgba(0,0,0,0.5);
+}
+
+.totalBox {
+  background-color: #56f89a;
+}
+
+.infoBox,
+.info {
+  margin-right: 5%;
+}
+
+/* Barra de progreso */
+
+.progressBar, .searchField {
+  margin-top: 20px;
+}
+
+/* Input de búsqueda */
+
+#myInput {
+  width: 300px;
+  box-shadow: 8px 8px 8px -6px rgba(0,0,0,0.5);
+}
+
+/* Información de Alumnas */
+
+.studentList {
+  margin: 20px 0px 0px 0px;
+}
+
+table {
+  border: 1px solid #ced4da;
+}
+
+thead, .numbers {
+  text-align: center;
+}
+
+tbody {
+  text-align: initial;
+}
+
+/* Media queries */
+
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -350px;
+    min-width: 350px;
+    max-width: 350px;
+    position: absolute;
+    z-index: 2;
+  }
+  #sidebar.active {
+    margin-left: 0;
+  }
+  .navbar-btn {
+    visibility: visible;
+  }
+  h1 {
+    font-size: 35px;
+  }
+  header, #mainInfo {
+    width: 100%;
+    padding: 8px 10px;
+  }
+  .infoBox, .totalBox {
+    margin-right: 0;
+    box-shadow: 5px 5px 10px -6px rgba(0,0,0,0.5);
+  }
+  #myInput {
+    width: 100;
+  }
+  table {
+    width: 100%;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 500px) {
+  table {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  header {
+    height: 60px;
+  }
+  .navbar-btn {
+    height: 30px;
+    width: 30px;
+  }
+  h1 {
+    font-size: 27px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  table {
+    font-size: 8px;
+  }
+  #sidebar {
+    margin-left: -280px;
+    min-width: 280px;
+    max-width: 280px;
+    position: absolute;
+    z-index: 2;
+  }
+}
+
+
+
+
+
+
