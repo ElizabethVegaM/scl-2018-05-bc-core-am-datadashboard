@@ -1,33 +1,3 @@
-window.onload = () => {
-  database();
-};
-
-// Variables vacías que guardarán los archivos json
-let users = {};
-let cohorts = {};
-let progress = {};
-
-// Traer los archivos json
-const database = () => {
-  fetch('../../../data/cohorts/lim-2018-03-pre-core-pw/users.json')
-    .then(response => response.json())
-    .then(data => {
-      users = data;
-    });
-
-  fetch('../../../data/cohorts.json')
-    .then(response => response.json())
-    .then(cohortsJSON => {
-      cohort = cohortsJSON;
-    });
-
-  fetch('../../../data/cohorts/lim-2018-03-pre-core-pw/progress.json')
-    .then(response => response.json())
-    .then(progressJSON => {
-      progress = progressJSON;
-    });
-};
-
 class User {
   constructor(stats) {
     this.stats = stats;
@@ -65,12 +35,6 @@ class Quizzes {
   }
 }
 
-document.getElementById('show').addEventListener('click', () => {
-  hiddingElement.classList.remove('d-none');
-  renderUsers(users, computeUsersStats(users, progress));
-  calculateTotals(computeUsersStats(users, progress));
-});
-
 window.computeUsersStats = (users, progress) => {
   let processed = [];
   let progressArr = Object.entries(progress);
@@ -93,23 +57,8 @@ window.computeUsersStats = (users, progress) => {
   }
   return processed;
 };
-
-window.sortUsers = (users, orderBy, orderDirection) => {
-
-};
-window.filterUsers = (users, search) => {
-
-};
-window.processCohortData = (options) => {
-
-};
-
 // Calcular lecturas
-window.getReadings = (units) => {
-  // Declaro un objeto constructor de lecturas que guadrará la información final
-
-  // Se recorren los objetos dentro de objetos hasta llegar los puntos de cada unidad, donde verifica las propiedades que sean de tipo lectura y de acuerdo a eso las suma para lograr el total (readings), conocer las que la alumna ha completado (completedReadings) y saca un promedio de acuerdo a eso (readingsPercent)
-
+const getReadings = (units) => {
   let readings = 0;
   let completedReadings = 0;
   let readingsPercent;
@@ -133,10 +82,7 @@ window.getReadings = (units) => {
 };
 
 // Calcular ejercicios
-window.getExercizes = (units) => {
-  // Declaro un objeto constructor de exercizes que guadrará la información final
-
-  // Se recorren los objetos dentro de objetos hasta llegar los puntos de cada unidad, donde verifica las propiedades que sean de tipo practice y de acuerdo a eso las suma para lograr el total (exercize), conocer las que la alumna ha completado (completedExercize) y saca un promedio de acuerdo a eso (exercizePercent)
+const getExercizes = (units) => {
   let exercize = 0;
   let completedExercize = 0;
   let exercizePercent;
@@ -160,11 +106,7 @@ window.getExercizes = (units) => {
 };
 
 // Calcular quizzes
-window.getQuizzes = (units) => {
-  // Declaro un objeto constructor de Quizzes que guadrará la información final
-
-  // Se recorren los objetos dentro de objetos hasta llegar los puntos de cada unidad, donde verifica las propiedades que sean de tipo quiz y de acuerdo a eso las suma para lograr el total (quiz), conocer las que la alumna ha completado (completedQuiz), saca un promedio de acuerdo a eso (quizPercent), además muestra la suma de sus puntajes (scoreSum) y el puntaje promedio (scoreAvg)
-
+const getQuizzes = (units) => {
   let quiz = 0;
   let completedQuiz = 0;
   let scoreSum = 0;
@@ -191,32 +133,7 @@ window.getQuizzes = (units) => {
   return quizzes;
 };
 
-const renderUsers = (user, processed) => {
-  let rankingNumber = 0;
-  for (let i = 0; i < processed.length; i++) {
-    rankingNumber++;
-    if (processed[i] === 'Usuario no tiene información que mostrar' && user[i].role === 'student') {
-      tableName.innerHTML += '<tr>' +
-        '<td>' + rankingNumber + '</td>' +
-        '<td>' + user[i].name.toUpperCase() + '</td>' +
-        '<td class="numbers">' + '-' + '</td>' +
-        '<td class="numbers">' + '-' + '</td>' +
-        '<td class="numbers">' + '-' + '</td>' +
-        '<td class="numbers">' + '-' + '</td>' +
-        '</tr>';
-    } else if (user[i].role === 'student') {
-      tableName.innerHTML += '<tr>' +
-        '<td>' + rankingNumber + '</td>' +
-        '<td>' + user[i].name.toUpperCase() + '</td>' +
-        '<td class="numbers">' + Math.round(processed[i].stats.reads.percent) + '%' + '</td>' +
-        '<td class="numbers">' + Math.round(processed[i].stats.quizzes.percent) + '%' + '</td>' +
-        '<td class="numbers">' + Math.round(processed[i].stats.practice.percent) + '%' + '</td>' +
-        '<td class="numbers">' + Math.round(processed[i].stats.percent) + '%' + '</td>' +
-        '</tr>';
-    };
-  };
-};
-
+// Calcula los totales para el cohort
 const calculateTotals = (processed) => {
   let totalReads = 0;
   let totalQuiz = 0;
@@ -240,3 +157,14 @@ const calculateTotals = (processed) => {
     document.getElementById('totalCohort').innerHTML = Math.round(totalCohort / processed.length) + '%';
   };
 };
+
+window.sortUsers = (users, orderBy, orderDirection) => {
+
+};
+window.filterUsers = (users, search) => {
+
+};
+window.processCohortData = (options) => {
+
+};
+

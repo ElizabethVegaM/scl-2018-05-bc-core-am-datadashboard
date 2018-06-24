@@ -1,4 +1,5 @@
 /* Estilos Generales de la página */
+
 .container-fluid {
   padding: 0;
   text-align: initial;
@@ -13,7 +14,7 @@
   padding-left: 0;
 }
 
-/* Tipografías */
+/* Estilos de Textos */
 h1 {
   float: left;
 }
@@ -23,7 +24,7 @@ h2 {
   padding-bottom: 10px;
 }
 
-h2, h4,
+h2, h4, H5,
 .cohortBtn,
 .card-body,
 .list {
@@ -66,7 +67,8 @@ img {
 
 #info {
   margin: 10px;
-  font-size: 15px;
+  padding-bottom: 10px;
+  color: #7d8083;
 }
 
 #sidebar.active {
