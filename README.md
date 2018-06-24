@@ -14,7 +14,7 @@ Primero para comenzar con el aspecto visual tuvimos que crear un diagrama de flu
 Nuestro principal fuente de referencia es la plataforma LMS, nuestra primera preocupación fue entrelazar los distintos sedes y la subdivisión en cohorts tomando en cuenta la ruta de aprendizaje y las necesidades globales de las training manager en ese espacio. 
 A continuación podrá ver en un par de sketch la idea original y como pensamos seria la forma mas cómoda de ver los datos para su posterior interpretación.
 
-![alt text](https://www.figma.com/file/DvjVJ4mgqbf1nq2LgVZyIwan/Dashboard)
+[a link](https://www.figma.com/file/DvjVJ4mgqbf1nq2LgVZyIwan/Dashboard)
 
 
 Experiencia de usuario: a continuación se explicara paso a paso como funciona la plataforma.
