@@ -16,7 +16,7 @@
 
 /* Estilos de Textos */
 h1 {
-  float: left;
+  padding-left: 20px;
 }
 
 h2 {
@@ -131,9 +131,10 @@ button {
   border: none;
   width: 40px;
   height: 40px;
-  border-radius: 8px;
-  float: right;
   background: #ffc107;
+  position: absolute;
+  top: 1vh;
+  right: 3vw;
 }
 
 .animated-icon1 {
@@ -170,8 +171,16 @@ button {
 
 /* Información General del Cohort*/
 
+header {
+  height: 8vh;
+  background-color: #ffc107;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
 #mainInfo {
-  margin: 0;
+  margin-top: 9vh;
   padding: 20px 30px;
 }
 
@@ -236,7 +245,7 @@ tbody {
     margin-left: -350px;
     min-width: 350px;
     max-width: 350px;
-    position: absolute;
+    position: fixed;
     z-index: 2;
   }
   #sidebar.active {
@@ -272,9 +281,6 @@ tbody {
 }
 
 @media (max-width: 320px) {
-  header {
-    height: 60px;
-  }
   .navbar-btn {
     height: 30px;
     width: 30px;
