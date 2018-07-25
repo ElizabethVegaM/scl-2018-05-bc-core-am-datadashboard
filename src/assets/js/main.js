@@ -30,7 +30,6 @@ const database = () => {
 
 const asideBtn = document.getElementById('menu-toggle');
 const usersBtn = document.getElementById('show');
-const tableName = document.getElementById('studentsName');
 const hiddingElement = document.getElementById('mainInfo');
 const wrapper = document.getElementById('wrapper');
 
@@ -53,7 +52,7 @@ const renderUsers = (user, processed) => {
   for (let i = 0; i < processed.length; i++) {
     rankingNumber++;
     if (processed[i] === 'Usuario no tiene información que mostrar' && user[i].role === 'student') {
-      tableName.innerHTML += '<tr>' +
+      studentsName.innerHTML += '<tr>' +
         '<td>' + rankingNumber + '</td>' +
         '<td>' + user[i].name.toUpperCase() + '</td>' +
         '<td class="numbers">' + '-' + '</td>' +
@@ -62,7 +61,7 @@ const renderUsers = (user, processed) => {
         '<td class="numbers">' + '-' + '</td>' +
         '</tr>';
     } else if (user[i].role === 'student') {
-      tableName.innerHTML += '<tr>' +
+      studentsName.innerHTML += '<tr>' +
         '<td>' + rankingNumber + '</td>' +
         '<td>' + user[i].name.toUpperCase() + '</td>' +
         '<td class="numbers">' + Math.round(processed[i].stats.reads.percent) + '%' + '</td>' +
@@ -73,3 +72,41 @@ const renderUsers = (user, processed) => {
     };
   };
 };
+
+function onSearchBoxChange() {
+  const search = searchBox.value;
+  const filteredUsers = window.filterUsers(processed, search);
+  searchStudent.innerHTML = '';
+  filteredUsers.forEach(student => {
+    searchStudent.innerHTML += `
+      <p>${student.name}</p>
+    `;
+  });
+  if (search === '') {
+    searchStudent.innerHTML = '';
+  };
+}
+
+/*
+function sortByPercent() {
+  const direction = 'DES';
+  const sortedUsers = window.sortUsers(users, 'percent', direction);
+  studentContainer.innerHTML = '';
+  for (let student of sortedUsers) {
+    studentContainer.innerHTML += `
+      <p>${student.name} ${student.stats.percent}</p>
+    `;
+  }
+}
+
+function sortByName() {
+  const direction = 'DES';
+  const sortedUsers = window.sortUsers(users, 'name', direction);
+  studentsName.innerHTML = '';
+  for (let i = 0; i < sortedUsers.length; i++) {
+    studentsName.innerHTML += `
+      <p>${sortedUsers[i].name} ${sortedUsers[i].stats.percent}</p>
+    `;
+  }
+}
+*/

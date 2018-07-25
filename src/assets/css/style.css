@@ -72,7 +72,7 @@ img {
 }
 
 #sidebar.active {
-  margin-left: -350px;
+  margin-left: 0px;
 }
 
 #sidebar .sidebar-header {
@@ -123,18 +123,6 @@ button {
   box-shadow: 0px 10px 10px -4px rgba(0,0,0,0.47);
 }
 
-/* Header */
-
-header {
-  height: 70px;
-  background-color: #ffc107;
-  padding: 8px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
 /*Botón que visualiza la Barra Lateral */
 
 .navbar-btn {
@@ -145,7 +133,6 @@ header {
   height: 40px;
   border-radius: 8px;
   float: right;
-  visibility: hidden;
   background: #ffc107;
 }
 

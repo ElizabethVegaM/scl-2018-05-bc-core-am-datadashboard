@@ -1,5 +1,6 @@
 class User {
-  constructor(stats) {
+  constructor(id, stats) {
+    this.id = id;
     this.stats = stats;
   }
 }
@@ -35,8 +36,8 @@ class Quizzes {
   }
 }
 
+let processed = [];
 window.computeUsersStats = (users, progress) => {
-  let processed = [];
   let progressArr = Object.entries(progress);
   let user = users;
   for (let i = 0; i < progressArr.length; i++) {
@@ -50,11 +51,12 @@ window.computeUsersStats = (users, progress) => {
         let units = Object.entries(intro.units);
         let percent = intro.percent;
         let userStats = new Stats(percent, getReadings(units), getExercizes(units), getQuizzes(units));
-        let users = new User(userStats);
+        let users = new User(user, userStats);
         processed.push(users);
       }
     }
   }
+  console.log(processed);
   return processed;
 };
 // Calcular lecturas
@@ -159,12 +161,36 @@ const calculateTotals = (processed) => {
 };
 
 window.sortUsers = (users, orderBy, orderDirection) => {
+  if (orderBy === 'name') {
+    return users.sort(function(a, b) {
+      if (orderDirection === 'DES') {
+        return a.name.localeCompare(b.name);
+      } else {
+        return a.name.localeCompare(b.name) * -1;
+      }
+    });
+  }
 
+  if (orderBy === 'percent') {
+    return users.sort((a, b) => {
+      if (orderDirection === 'DES') {
+        return a.stats.percent - b.stats.percent;
+      } else {
+        return (a.stats.percent - b.stats.percent) * -1;
+      }
+    });
+  }
 };
-window.filterUsers = (users, search) => {
 
-};
-window.processCohortData = (options) => {
-
+window.filterUsers = (processed, search) => {
+  if (search) {
+    if (processed) {
+      search = search.toLowerCase();
+      return processed.filter(user => user &&
+        user.name &&
+        user.name.toLowerCase().indexOf(search) >= 0);
+    }
+  }
+  return processed;
 };
 

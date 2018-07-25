@@ -180,7 +180,8 @@
         <!-- Input de búsqueda -->
         <article class="searchField">
           <div>
-            <input class="form-control" id="myInput" type="text" placeholder="Buscar alumna...">
+            <input class="form-control" id="searchBox" type="text" onkeyup="onSearchBoxChange()" placeholder="Buscar alumna...">
+            <div id="searchStudent"></div>
           </div>
         </article>
 
@@ -191,15 +192,18 @@
             <thead>
               <tr>
                 <th>#</th>
-                <th>NOMBRE</th>
+                <th>
+                  <button onclick="sortByName()">NOMBRE</button>
+                </th>
                 <th>LECTURAS</th>
                 <th>QUIZZES</th>
                 <th>EJERCICIOS</th>
-                <th>PROGRESO GENERAL</th>
+                <th>
+                  <button onclick="sortByPercent()">PROGRESO GENERAL</button>
+                </th>
               </tr>
             </thead>
             <tbody id="studentsName">
-
             </tbody>
           </table>
         </article>
